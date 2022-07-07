@@ -13,17 +13,19 @@ class Pandemic{
 	// vector keeping the history of the pandemic
 	std::vector<Data> history;
 
-	// variable representing the total of people and days
+	// variable representig the total number of person
 	int tot_;
-	int tot_day_;
 
 	// probability of contagion and healing
 	double beta_;
 	double gamma_;
 
+	// variable representing the period of simulation in days
+	int tot_day_;
+
 public:
 	// class constructor declaration
-	Pandemic(int sus, int inf, int rem, int day, double beta, double gamma);
+	Pandemic(int sus, int inf, int rem, double beta, double gamma, int day);
 
 	// evolve function declaration
 	void evolve();
@@ -36,6 +38,10 @@ public:
 
 	// getter of the number of susceptible at the i-th day
 	int get_rem(int i) const;
+
+	// getter for beta and gamma
+	double get_beta() const {return beta_;}
+	double get_gamma() const {return gamma_;}
 };
 
 #endif

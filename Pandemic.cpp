@@ -6,7 +6,7 @@
 #include <iostream>
 
 
-Pandemic::Pandemic(int sus, int inf, int rem, int day, double beta, double gamma) : history{Data{sus, inf, rem}}, tot_{sus+inf+rem}, tot_day_{day}, beta_{beta}, gamma_ {gamma} { 
+Pandemic::Pandemic(int sus, int inf, int rem, double beta, double gamma, int day) : history{Data{sus, inf, rem}}, tot_{sus+inf+rem}, beta_{beta}, gamma_ {gamma}, tot_day_{day} { 
 	assert(sus > 0 && inf > 0 && rem > 0 && tot_day_ > 0);
 	assert(beta >= 0 && beta <= 1);
 	assert(gamma >= 0 && gamma <= 1);
