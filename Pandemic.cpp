@@ -65,3 +65,16 @@ int Pandemic::get_rem(int i) const {
   assert(i < static_cast<int>(history.size()));
   return history[i].rem_;
 }
+
+void Pandemic::print_history() const {
+  std::cout << "\nResult of the simulation:\n";
+  std::cout << "day\t"
+            << "susceptible\t"
+            << "infected\t"
+            << "removed\n";
+
+  for (int i = 0; i <= tot_day_; ++i) {
+    std::cout << i << '\t' << this->get_sus(i) << "\t\t" << this->get_inf(i)
+              << "\t\t" << this->get_rem(i) << '\n';
+  }
+}

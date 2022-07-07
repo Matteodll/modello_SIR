@@ -38,6 +38,9 @@ class Pandemic {
 
   // getter of the number of susceptible at the i-th day
   int get_rem(int i) const;
+
+  // method for printing the result on standard output
+  void print_history() const;
 };
 
 #endif

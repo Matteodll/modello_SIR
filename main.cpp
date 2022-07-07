@@ -45,4 +45,8 @@ int main() {
   }
 
   Pandemic p(n_sus, n_inf, n_rem, beta, gamma, tot_day);
+
+  p.evolve();
+
+  p.print_history();
 }
