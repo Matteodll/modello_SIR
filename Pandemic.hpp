@@ -3,6 +3,7 @@
 
 #include <vector>
 
+// struct keeping the data of a certian day
 struct Data {
   int sus_;
   int inf_;
@@ -27,20 +28,23 @@ class Pandemic {
   // class constructor declaration
   Pandemic(int sus, int inf, int rem, double beta, double gamma, int day);
 
-  // evolve function declaration
+  // function that performs the simulation
   void evolve();
 
   // getter of the number of susceptible at the i-th day
   int get_sus(int i) const;
 
-  // getter of the number of susceptible at the i-th day
+  // getter of the number of infected at the i-th day
   int get_inf(int i) const;
 
-  // getter of the number of susceptible at the i-th day
+  // getter of the number of removed at the i-th day
   int get_rem(int i) const;
 
   // method for printing the result on standard output
   void print_history() const;
+
+  // method for pr
+  void draw() const;
 };
 
 #endif

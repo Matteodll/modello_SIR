@@ -5,7 +5,7 @@
 
 TEST_CASE("Testing class Pandemic") {
   SUBCASE("Testing evolve and all the getters: predominace of susceptible") {
-    Pandemic p(100, 5, 3, 0.3, 0.2, 20);
+    Pandemic p(100, 5, 3, 0.3, 0.2, 4);
     p.evolve();
 
     CHECK(p.get_sus(0) == 100);
@@ -30,7 +30,7 @@ TEST_CASE("Testing class Pandemic") {
   }
 
   SUBCASE("Testing evolve and all the getters: predominace of Infected") {
-    Pandemic p(20, 70, 30, 0.5, 0.3, 20);
+    Pandemic p(20, 70, 30, 0.5, 0.3, 4);
     p.evolve();
 
     CHECK(p.get_sus(0) == 20);
@@ -55,7 +55,7 @@ TEST_CASE("Testing class Pandemic") {
   }
 
   SUBCASE("Testing evolve and all the getters: predominace of removed") {
-    Pandemic p(20, 10, 50, 0.3, 0.5, 20);
+    Pandemic p(20, 10, 50, 0.3, 0.5, 4);
     p.evolve();
 
     CHECK(p.get_sus(0) == 20);
@@ -80,7 +80,7 @@ TEST_CASE("Testing class Pandemic") {
   }
 
   SUBCASE("Testing evolve and all the getters: beta = 0") {
-    Pandemic p(20, 10, 20, 0., 0.3, 20);
+    Pandemic p(20, 10, 20, 0., 0.3, 6);
     p.evolve();
 
     CHECK(p.get_sus(0) == 20);
@@ -113,7 +113,7 @@ TEST_CASE("Testing class Pandemic") {
   }
 
   SUBCASE("Testing evolve and all the getters: gamma = 0") {
-    Pandemic p(20, 50, 10, 0.3, 0., 20);
+    Pandemic p(20, 50, 10, 0.3, 0., 4);
     p.evolve();
 
     CHECK(p.get_sus(0) == 20);
@@ -138,7 +138,7 @@ TEST_CASE("Testing class Pandemic") {
   }
 
   SUBCASE("Testing evolve and all the getters: beta = 1") {
-    Pandemic p(50, 20, 10, 1., .3, 20);
+    Pandemic p(50, 20, 10, 1., .3, 4);
     p.evolve();
 
     CHECK(p.get_sus(0) == 50);
@@ -163,7 +163,7 @@ TEST_CASE("Testing class Pandemic") {
   }
 
   SUBCASE("Testing evolve and all the getters: gamma = 1") {
-    Pandemic p(20, 50, 10, .3, 1., 20);
+    Pandemic p(20, 50, 10, .3, 1., 4);
     p.evolve();
 
     CHECK(p.get_sus(0) == 20);
@@ -188,7 +188,7 @@ TEST_CASE("Testing class Pandemic") {
   }
 
   SUBCASE("Testing evolve and all the getters: beta = 1 and gamma = 1") {
-    Pandemic p(20, 50, 10, 1., 1., 20);
+    Pandemic p(20, 50, 10, 1., 1., 4);
     p.evolve();
 
     CHECK(p.get_sus(0) == 20);
