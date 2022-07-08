@@ -95,6 +95,8 @@ void Pandemic::print_history() const {
 // free function that takes two vectors and print a graph on standard output
 void draw_h(std::vector<int> v, std::vector<int> day) {
   assert(v.size() != 0 && day.size() != 0);
+  if (v.size() != day.size())
+    throw std::runtime_error("different dimension of vectors");
   double max = static_cast<double>(*std::max_element(v.begin(), v.end()));
 
   double lines = 30.;
