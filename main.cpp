@@ -1,7 +1,7 @@
-#include "Pandemic.hpp"
-
 #include <exception>
 #include <iostream>
+
+#include "Pandemic.hpp"
 
 int main() {
   int n_sus;
@@ -40,18 +40,18 @@ int main() {
     std::cin >> tot_day;
     if (!std::cin || tot_day <= 0) throw std::runtime_error{"Invalid period"};
 
-  Pandemic p(n_sus, n_inf, n_rem, beta, gamma, tot_day);
+    Pandemic p(n_sus, n_inf, n_rem, beta, gamma, tot_day);
 
-  p.evolve();
+    p.evolve();
 
-  p.print_history();
+    p.print_history();
 
-  p.draw();
+    p.draw();
 
   } catch (std::runtime_error const& error) {
     std::cerr << error.what() << '\n';
     return 1;
   }
-  
+
   return 0;
 }
